@@ -21,13 +21,16 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./src",
     "paths":
       {
-        "@assets/*": ["./src/assets/*"],
-        "@components/*": ["./src/components/*"],
-        "@pages/*": ["./src/pages/*"],
-        "@store/*": ["./src/store/*"],
-        "@hooks/*": ["./src/hooks/*"],
+        "@assets/*": ["./assets/*"],
+        "@components/*": ["./components/*"],
+        "@containers/*": ["./containers/*"],
+        "@pages/*": ["./pages/*"],
+        "@store/*": ["./store/*"],
+        "@shared/*": ["./shared/*"],
+        "@api/*": ["./api/*"]
       }
   },
   "include": [

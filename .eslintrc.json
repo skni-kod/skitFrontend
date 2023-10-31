@@ -6,7 +6,6 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:react/jsx-runtime"
@@ -174,6 +173,16 @@
         "blankLine": "any",
         "prev": "let",
         "next": "const"
+      },
+      {
+        "blankLine": "any",
+        "prev": "const",
+        "next": "const"
+      },
+      {
+        "blankLine": "any",
+        "prev": "let",
+        "next": "let"
       }
     ],
     "rest-spread-spacing": ["warn", "never"],
