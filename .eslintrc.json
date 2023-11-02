@@ -146,7 +146,9 @@
     "max-statements-per-line": ["warn", {
       "max": 2
     }],
-    "no-trailing-spaces": "warn",
+    "no-trailing-spaces": ["warn", {
+      "skipBlankLines": true
+    }],
     "no-whitespace-before-property": "warn",
     "padding-line-between-statements": ["warn",
       {
