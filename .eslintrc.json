@@ -19,6 +19,11 @@
     "react-refresh"
   ],
   "rules": {
+    /* modified built-in rules */
+    "no-undef": "off",
+    "no-unused-vars": "warn",
+
+    /* warnings */
     "no-compare-neg-zero": "warn",
     "no-constant-condition": "warn",
     "no-debugger": "warn",
@@ -203,6 +208,7 @@
       }],
     "switch-colon-spacing": "warn",
 
+    /* errors */
     "for-direction": "error",
     "no-cond-assign": "error",
     "no-const-assign": "error",
