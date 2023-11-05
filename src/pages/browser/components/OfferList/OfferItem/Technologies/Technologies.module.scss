@@ -1,0 +1,16 @@
+@use "../../../../../../styles/variables" as var;
+
+.technologies {
+  font-size: 0.8rem;
+  font-family: 'Fira Code', monospace;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .technology {
+    border: 2px solid var.$accent;
+    border-radius: 1rem;
+    padding: 0.1rem 0.6rem;
+
+  }
+}
