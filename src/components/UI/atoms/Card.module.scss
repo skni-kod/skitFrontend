@@ -1,0 +1,7 @@
+@use "src/styles/variables" as styles;
+
+.card {
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: styles.$background1;
+}
