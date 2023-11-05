@@ -11,7 +11,7 @@ interface ITextWithIcon {
 }
 
 const TextWithIcon = (props: ITextWithIcon) => {
-  const className = `${classes["text-with-icon"]} ${props.className}`;
+  const className = `${classes["text-with-icon"]} ${props.className ?? ""}`;
 
   return (
     <div className={className}>
