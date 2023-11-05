@@ -10,7 +10,7 @@ interface IOfferMainInfo {
 const MainInfo = (props: IOfferMainInfo) => {
   return (
     <div className={classes["main-info"]}>
-      <h2 className={classes.title}>{props.title}</h2>
+      <h2>{props.title}</h2>
       <div className={classes.description}>
         <TextWithIcon iconBefore="corporate_fare" text={props.companyName} />
         <TextWithIcon iconBefore="place" text={props.workLocation} />
