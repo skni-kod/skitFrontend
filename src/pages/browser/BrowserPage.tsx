@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { TOffer } from "@api/types/offer/offer.ts";
 import { TPaginator } from "@api/types/paginator/paginator.ts";
 import OfferList from "./components/OfferList/OfferList.tsx";
+import DetailsView from "@pages/browser/components/DetailsView/DetailsView.tsx";
+import classes from "./BrowserPage.module.scss";
 
 const OFFERS_MOCK: TOffer[] = [
   {
@@ -80,9 +82,12 @@ const OFFERS_MOCK: TOffer[] = [
 
 const BrowserPage = () => {
   const [offers, setOffers] = useState<TPaginator<TOffer> | null>(null);
+  const [offer, setOffer] = useState<TOffer>();
+  const [selectedID] =  useState<String>("1");
 
   useEffect(() => {
     const timeout = 500;
+
 
     setTimeout(() => {
       const data: TPaginator<TOffer> = {
@@ -94,17 +99,25 @@ const BrowserPage = () => {
       };
 
       setOffers(data);
+      setOffer(data.Items.find((p) => p.id === selectedID));
     }, timeout);
   }, []);
 
   const handleOffer = (offer: TOffer) => {
+    setOffer(offer);
     console.log(offer);
   };
 
   return (
-    <div>
-      {!offers && <div>Loading...</div>}
-      {offers && <OfferList {...offers} onOfferEmit={handleOffer} />}
+    <div className={classes.whole}>
+      <div className={classes.container}>
+        {!offers && <div>Loading...</div>}
+        {offers && <OfferList {...offers} onOfferEmit={handleOffer} />}
+      </div>
+      <div>
+        {!offer && <div></div>}
+        {offer && <DetailsView {...offer} />}
+      </div>
     </div>
   );
 };

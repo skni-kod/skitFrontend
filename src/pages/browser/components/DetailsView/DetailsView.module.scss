@@ -1,0 +1,15 @@
+@use '../../../../styles/variables' as styles;
+::-webkit-scrollbar {
+  width: 0;
+}
+span{
+  margin-left: 1em;
+}
+.details{
+  border-radius: 1rem;
+  background-color: styles.$background1;
+  width: 50vw;
+  height: 90vh;
+  margin-top: 1rem;
+  overflow-y: scroll;
+}
