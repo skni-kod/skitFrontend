@@ -1,0 +1,17 @@
+@use "src/styles/variables" as var;
+
+.chip {
+  border: 2px solid var.$text-secondary;
+  border-radius: var.$border-radius;
+  padding: 0.1rem 0.6rem;
+
+  &--medium {
+    padding: 0.2rem 0.8rem;
+    font-size: medium;
+  }
+
+  &--small {
+    padding: 0.1rem 0.4rem;
+    font-size: small;
+  }
+}

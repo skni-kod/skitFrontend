@@ -1,9 +1,9 @@
-import { TSalaryRange } from "@api/types/offer/offer.ts";
+import { TSalary } from "@api/types/offer.ts";
 import TextWithIcon from "@components/UI/molecules/TextWithIcon.tsx";
 import classes from "./Salary.module.scss";
 
 interface ISalaryProps {
-  salaryRange: TSalaryRange;
+  salaryRange: TSalary;
 }
 
 const Salary = (props: ISalaryProps) => {

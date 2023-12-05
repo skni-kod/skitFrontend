@@ -1,8 +1,7 @@
-import { TOffer } from "@api/types/offer/offer.ts";
+import { TOffer } from "@api/types/offer.ts";
 import Card from "@components/UI/atoms/Card.tsx";
-import MainInfo from "@pages/browser/components/OfferList/OfferItem/MainInfo/MainInfo.tsx";
-import Technologies from "@pages/browser/components/OfferList/OfferItem/Technologies/Technologies.tsx";
-import Salary from "@pages/browser/components/OfferList/OfferItem/Salary/Salary.tsx";
+import TitleAndSalarySection from "@pages/browser/components/OfferList/OfferItem/MainInfo/TitleAndSalarySection.tsx";
+import DescriptionAndTechnologiesSection from "@pages/browser/components/OfferList/OfferItem/Technologies/DescriptionAndTechnologiesSection.tsx";
 import classes from "./OfferItem.module.scss";
 
 interface IOfferItemProps {
@@ -13,28 +12,22 @@ interface IOfferItemProps {
 const OfferItem = (props: IOfferItemProps) => {
   return (
     <Card className={classes.offer} onClick={props.onClick}>
+      <img
+        className={classes.logo}
+        src={props.offer.company.logoSrc}
+        alt={`logo of ${props.offer.company.name} company`}
+      />
       <div className={classes.description}>
-        <img
-          src={props.offer.company.logoSrc}
-          alt={`logo of ${props.offer.company.name} company`}
-          className={classes.logo}
-        />
-        <MainInfo
+        <TitleAndSalarySection
           title={props.offer.title}
-          workLocation={props.offer.workLocation}
+          salaries={props.offer.salaries}
+        />
+        <DescriptionAndTechnologiesSection
           companyName={props.offer.company.name}
+          workLocations={props.offer.workLocations}
+          technologies={props.offer.technologies}
         />
       </div>
-      {props.offer.technologies && (
-        <div className={classes.section}>
-          <Technologies technologies={props.offer.technologies} />
-        </div>
-      )}
-      {props.offer.salaryRange && (
-        <div className={classes.section}>
-          <Salary salaryRange={props.offer.salaryRange} />
-        </div>
-      )}
     </Card>
   );
 };

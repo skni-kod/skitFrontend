@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import { TOffer } from "@api/types/offer/offer.ts";
-import { TPaginator } from "@api/types/paginator/paginator.ts";
+import { TOffer } from "@api/types/offer.ts";
+import { TPaginator } from "@api/types/paginator.ts";
 import OfferList from "./components/OfferList/OfferList.tsx";
+import { WORK_LOCATION_ENUM } from "@api/enums/work-location.ts";
+import { SALARY_EMPLOYMENT_ENUM } from "@api/enums/salary-employment.ts";
 
 const OFFERS_MOCK: TOffer[] = [
   {
@@ -12,12 +14,14 @@ const OFFERS_MOCK: TOffer[] = [
       name: "Ideo",
       logoSrc: "https://picsum.photos/100/200"
     },
-    salaryRange: {
+    salary: {
       from: 1000.0,
-      to: null
+      to: null,
+      employmentType: SALARY_EMPLOYMENT_ENUM.B2B
     },
-    technologies: [".NET", "C#", "Docker"],
-    workLocation: "Rzeszów"
+    cities: ["Rzeszów", "Lublin"],
+    technologies: [{ name: ".NET" }, { name: "C#" }, { name: "Docker" }],
+    workLocations: [WORK_LOCATION_ENUM.Remote],
   },
   {
     id: "2",
@@ -27,12 +31,13 @@ const OFFERS_MOCK: TOffer[] = [
       name: "SII",
       logoSrc: "https://picsum.photos/200/100"
     },
-    salaryRange: {
+    salary: {
       from: 2000.0,
       to: 3000.0
     },
     technologies: ["MS Office", "Sieci LAN", "Windows 7"],
-    workLocation: "Rzeszów"
+    workLocations: "Rzeszów",
+    employmentType: "stacjonarna",
   },
   {
     id: "3",
@@ -42,9 +47,10 @@ const OFFERS_MOCK: TOffer[] = [
       name: "Delloite",
       logoSrc: "https://picsum.photos/100/150"
     },
-    salaryRange: null,
+    salary: null,
     technologies: ["React JS", "Angular", "TypeScript", "SCSS"],
-    workLocation: "Rzeszów"
+    workLocations: "Rzeszów",
+    employmentType: "hybrydowa",
   },
   {
     id: "4",
@@ -54,12 +60,13 @@ const OFFERS_MOCK: TOffer[] = [
       name: "Ideo",
       logoSrc: "https://picsum.photos/100"
     },
-    salaryRange: {
+    salary: {
       from: 3000.0,
       to: null
     },
     technologies: [".NET", "C#", "kubernetes"],
-    workLocation: "Rzeszów"
+    workLocations: "Rzeszów",
+    employmentType: "zdalna"
   },
   {
     id: "5",
@@ -69,12 +76,13 @@ const OFFERS_MOCK: TOffer[] = [
       name: "Ideo",
       logoSrc: "https://picsum.photos/100"
     },
-    salaryRange: {
+    salary: {
       from: 1000.0,
       to: 2000.0
     },
     technologies: null,
-    workLocation: "Rzeszów"
+    workLocations: "Rzeszów",
+    employmentType: "zdalna",
   }
 ];
 

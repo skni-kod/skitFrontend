@@ -22,8 +22,8 @@ button {
   font-weight: 400;
 
   color-scheme: light dark;
-  color: styles.$text;
-  background-color: styles.$background;
+  color: styles.$text-primary;
+  background-color: styles.$background-base;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
