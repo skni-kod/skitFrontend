@@ -1,0 +1,14 @@
+@use 'src/styles/variables.scss' as var;
+
+.icon {
+  color: inherit;
+
+  &-- {
+    &primary {
+      color: var.$text-primary;
+    }
+    &secondary {
+      color: var.$text-secondary;
+    }
+  }
+}
