@@ -11,78 +11,100 @@ const OFFERS_MOCK: TOffer[] = [
     title: "Backend developer",
     company: {
       id: "1",
-      name: "Ideo",
-      logoSrc: "https://picsum.photos/100/200"
+      name: "Microsoft",
+      logoSrc: ""
     },
-    salary: {
-      from: 1000.0,
-      to: null,
-      employmentType: SALARY_EMPLOYMENT_ENUM.B2B
-    },
+    salaries: [
+      {
+        salaryFrom: 1000.0,
+        salaryTo: 2000.0,
+        employmentType: SALARY_EMPLOYMENT_ENUM.Permanent
+      }
+    ],
     cities: ["Rzeszów", "Lublin"],
     technologies: [{ name: ".NET" }, { name: "C#" }, { name: "Docker" }],
-    workLocations: [WORK_LOCATION_ENUM.Remote],
+    workLocations: [WORK_LOCATION_ENUM.Remote]
   },
   {
     id: "2",
     title: "Help desk",
     company: {
       id: "2",
-      name: "SII",
-      logoSrc: "https://picsum.photos/200/100"
+      name: "Amazon",
+      logoSrc: ""
     },
-    salary: {
-      from: 2000.0,
-      to: 3000.0
-    },
-    technologies: ["MS Office", "Sieci LAN", "Windows 7"],
-    workLocations: "Rzeszów",
-    employmentType: "stacjonarna",
+    salaries: [
+      {
+        salaryFrom: 1000.0,
+        salaryTo: 2000.0,
+        employmentType: SALARY_EMPLOYMENT_ENUM.MandateContract
+      },
+      {
+        salaryFrom: 1500.0,
+        salaryTo: 2300.0,
+        employmentType: SALARY_EMPLOYMENT_ENUM.B2B
+      }
+    ],
+    technologies: null,
+    workLocations: [WORK_LOCATION_ENUM.Remote, WORK_LOCATION_ENUM.Office],
+    cities: ["Rzeszów"]
   },
   {
     id: "3",
     title: "Frontend developer",
     company: {
       id: "3",
-      name: "Delloite",
-      logoSrc: "https://picsum.photos/100/150"
+      name: "Google",
+      logoSrc: ""
     },
-    salary: null,
-    technologies: ["React JS", "Angular", "TypeScript", "SCSS"],
-    workLocations: "Rzeszów",
-    employmentType: "hybrydowa",
+    salaries: [
+      {
+        salaryFrom: 1000.0,
+        salaryTo: 2000.0,
+        employmentType: SALARY_EMPLOYMENT_ENUM.B2B
+      }
+    ],
+    technologies: null,
+    workLocations: [WORK_LOCATION_ENUM.Remote, WORK_LOCATION_ENUM.Office],
+    cities: ["Rzeszów"]
   },
   {
     id: "4",
     title: "Backend developer",
     company: {
       id: "1",
-      name: "Ideo",
+      name: "Apple",
       logoSrc: "https://picsum.photos/100"
     },
-    salary: {
-      from: 3000.0,
-      to: null
-    },
-    technologies: [".NET", "C#", "kubernetes"],
-    workLocations: "Rzeszów",
-    employmentType: "zdalna"
+    salaries: [
+      {
+        salaryFrom: 1000.0,
+        salaryTo: 2000.0,
+        employmentType: SALARY_EMPLOYMENT_ENUM.B2B
+      }
+    ],
+    technologies: [{ name: "NET" }, { name: "C#" }, { name: "kubernetes" }], // ["".NET", "C#", "kubernetes"],
+    workLocations: [WORK_LOCATION_ENUM.Remote, WORK_LOCATION_ENUM.Hybrid],
+    cities: ["Rzeszów", "Lublin"]
   },
   {
     id: "5",
     title: "Backend developer",
     company: {
       id: "1",
-      name: "Ideo",
-      logoSrc: "https://picsum.photos/100"
+      name: "Samsung",
+      logoSrc: ""
     },
-    salary: {
-      from: 1000.0,
-      to: 2000.0
-    },
+    salaries: [
+      {
+        salaryFrom: 1000.0,
+        salaryTo: 2000.0,
+        employmentType: SALARY_EMPLOYMENT_ENUM.MandateContract
+      }
+    ],
     technologies: null,
-    workLocations: "Rzeszów",
-    employmentType: "zdalna",
+    workLocations: [WORK_LOCATION_ENUM.Remote, WORK_LOCATION_ENUM.Office],
+    cities: ["Rzeszów"]
   }
 ];
 
@@ -92,7 +114,28 @@ const BrowserPage = () => {
   useEffect(() => {
     const timeout = 500;
 
-    setTimeout(() => {
+    // const offersMock = OFFERS_MOCK.map((offer) => {
+    //   fetch(`https://api.api-ninjas.com/v1/logo?name=${offer.company.name}`, {
+    //     headers: {
+    //       "X-Api-Key": "7gsrCpYuBGtKrY/oyANprQ==DTrSXXN97E5hbxul"
+    //     }
+    //   })
+    //     .then((res) => res.json())
+    //     .then((data) => (offer.company.logoSrc = data[0].image));
+    //
+    //   return offer;
+    // });
+
+    setTimeout(async () => {
+      for (const offer of OFFERS_MOCK) {
+        await fetch(`https://api.api-ninjas.com/v1/logo?name=${offer.company.name}`, {
+          headers: {
+            "X-Api-Key": "7gsrCpYuBGtKrY/oyANprQ==DTrSXXN97E5hbxul"
+          }
+        })
+          .then((res) => res.json())
+          .then((data) => (offer.company.logoSrc = data[0]?.image));
+      }
       const data: TPaginator<TOffer> = {
         PageIndex: 0,
         Items: OFFERS_MOCK,

@@ -26,6 +26,7 @@ const OfferItem = (props: IOfferItemProps) => {
           companyName={props.offer.company.name}
           workLocations={props.offer.workLocations}
           technologies={props.offer.technologies}
+          cities={props.offer.cities}
         />
       </div>
     </Card>

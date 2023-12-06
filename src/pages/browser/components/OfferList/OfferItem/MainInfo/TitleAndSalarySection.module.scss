@@ -2,4 +2,9 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  .salaries {
+    display: flex;
+    flex-direction: column;
+  }
 }
