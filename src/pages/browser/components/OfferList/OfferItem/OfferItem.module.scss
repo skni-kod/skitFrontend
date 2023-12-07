@@ -1,21 +1,31 @@
 @use "src/styles/variables" as var;
 
+$increase-animation-duration: 0.2s;
+
 .offer {
   width: 100%;
   display: flex;
   gap: 1rem;
   border: 2px solid transparent;
   height: 10rem;
+  box-shadow:
+  0 0 20px transparentize(var.$primary, 1),
+  0 0 50px transparentize(var.$primary, 1);
   transition:
-          0.2s width ease-out,
-          0.2s border ease-out,
-          0.2s transform ease-out;
+          $increase-animation-duration width ease-out,
+          $increase-animation-duration border ease-out,
+          calc($increase-animation-duration * 2) box-shadow ease-out,
+          $increase-animation-duration transform ease-out;
 
   &:hover {
+    cursor: pointer;
     width: 102%;
     transform: translate(-1%, 0 );
-    cursor: pointer;
     border: 2px dashed var.$text-primary-muted;
+    box-shadow:
+            0 0 20px transparentize(var.$primary, 0.9),
+            0 0 50px transparentize(var.$primary, 0.8)
+  ;
 
     h2 {
       color: var.$text-accent;
