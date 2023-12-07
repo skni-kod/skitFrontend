@@ -1,9 +1,9 @@
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState } from "react";
 import Icon from "@components/UI/atoms/Icon.tsx";
 import classes from "./Input.module.scss";
 
 interface IInputProps
-  extends Partial<React.InputHTMLAttributes<HTMLInputElement>> {
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   iconBefore?: string;
   iconAfter?: string;
   label?: string;
@@ -11,11 +11,22 @@ interface IInputProps
 
 const Input = forwardRef<HTMLInputElement, IInputProps>(
   (props: IInputProps, ref: React.ForwardedRef<HTMLInputElement>) => {
+    const [inputType, setInputType] = useState<string>(props.type);
+
     const { iconBefore, iconAfter, label, ...inputProps } = props;
 
+    const handlePasswordEyeChange = () => {
+      if (props.type === inputType) setInputType("text");
+      else setInputType("password");
+    };
+
     const isPasswordType = inputProps.type === "password";
-    const passwordEyeIconName = isPasswordType ? "visibility" : "visibility_off";
-    const passwordEyeIcon = <Icon icon={passwordEyeIconName} />;
+    const passwordEyeIconName = props.type === inputType
+      ? "visibility"
+      : "visibility_off";
+    const passwordEyeIcon = (
+      <Icon icon={passwordEyeIconName} onClick={handlePasswordEyeChange} />
+    );
 
     const onChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (e.target.value) {
@@ -32,18 +43,17 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
         {iconBefore && <Icon icon={iconBefore} color={"primary"} />}
         <div className={classes.field}>
           <input
+            {...inputProps}
             className={classes.input}
             ref={ref}
-            {...inputProps}
+            type={inputType}
             onChange={onChangeHandle}
           />
           <label className={classes.label} htmlFor={props?.id}>
             {label}
           </label>
         </div>
-        {isPasswordType && (
-          passwordEyeIcon
-        )}
+        {isPasswordType && passwordEyeIcon}
         {iconAfter && <Icon icon={iconAfter} />}
       </div>
     );

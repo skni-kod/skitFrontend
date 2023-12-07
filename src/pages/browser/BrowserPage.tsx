@@ -114,18 +114,6 @@ const BrowserPage = () => {
   useEffect(() => {
     const timeout = 500;
 
-    // const offersMock = OFFERS_MOCK.map((offer) => {
-    //   fetch(`https://api.api-ninjas.com/v1/logo?name=${offer.company.name}`, {
-    //     headers: {
-    //       "X-Api-Key": "7gsrCpYuBGtKrY/oyANprQ==DTrSXXN97E5hbxul"
-    //     }
-    //   })
-    //     .then((res) => res.json())
-    //     .then((data) => (offer.company.logoSrc = data[0].image));
-    //
-    //   return offer;
-    // });
-
     setTimeout(async () => {
       for (const offer of OFFERS_MOCK) {
         await fetch(`https://api.api-ninjas.com/v1/logo?name=${offer.company.name}`, {
@@ -153,10 +141,10 @@ const BrowserPage = () => {
   };
 
   return (
-    <div>
+    <>
       {!offers && <div>Loading...</div>}
       {offers && <OfferList {...offers} onOfferEmit={handleOffer} />}
-    </div>
+    </>
   );
 };
 

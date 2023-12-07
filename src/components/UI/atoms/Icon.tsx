@@ -1,9 +1,10 @@
 import classes from "./Icon.module.scss";
 
 interface IIconProps {
+  className?: string;
   icon: string;
   color?: "primary" | "secondary";
-  className?: string;
+  onClick?: () => void;
 }
 
 const Icon = (props: IIconProps) => {
@@ -11,8 +12,9 @@ const Icon = (props: IIconProps) => {
 
   if (props.color) classNames += " " + classes[`icon--${props.color}`];
   if (props.className) classNames += " " + props.className;
+  if (props.onClick) classNames += " pointer";
 
-  return <span className={classNames}>{props.icon}</span>;
+  return <span className={classNames} onClick={props?.onClick}>{props.icon}</span>;
 };
 
 export default Icon;

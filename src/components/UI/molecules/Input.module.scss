@@ -4,11 +4,16 @@ $border: 2px solid var.$text-primary;
 
 .form-field {
   display: flex;
+  height: var.$ui-element-height;
   border: $border;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 0 10px;
   gap: 10px;
   align-items: center;
+
+  &:hover {
+    border-color: var.$text-secondary;
+  }
 
   .field {
     position: relative;

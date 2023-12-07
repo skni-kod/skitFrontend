@@ -1,13 +1,19 @@
 @use "src/styles/variables" as var;
 
 .offer {
+  width: 100%;
   display: flex;
   gap: 1rem;
   border: 2px solid transparent;
   height: 10rem;
+  transition:
+          0.2s width ease-out,
+          0.2s border ease-out,
+          0.2s transform ease-out;
 
   &:hover {
-    display: flex;
+    width: 102%;
+    transform: translate(-1%, 0 );
     cursor: pointer;
     border: 2px dashed var.$text-primary-muted;
 
