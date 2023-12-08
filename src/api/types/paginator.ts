@@ -1,7 +1,6 @@
 export type TPaginator<T> = {
-  PageIndex: number;
-  PageSize: number;
-  Items: T[];
-  SortExpression: string;
-  SortDirection: 'ASC' | 'DESC';
-}
+  pageIndex: number;
+  totalPages: number;
+  totalCount: number;
+  items: T[];
+};
