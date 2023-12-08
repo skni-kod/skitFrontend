@@ -1,4 +1,4 @@
-@use './styles/variables' as styles;
+@use './styles/variables' as var;
 
 *,
 *::after,
@@ -6,6 +6,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -19,6 +26,20 @@ button {
 .pointer {
   cursor: pointer;
 }
+::-webkit-scrollbar {
+  width: 10px;
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  width: 5px;
+  background-color: var.$primary;
+
+  &:hover {
+    background-color: var.$text-secondary-muted;
+  }
+}
 
 :root {
   font-family: 'Lato', sans-serif;
@@ -26,8 +47,8 @@ button {
   font-weight: 400;
 
   color-scheme: light dark;
-  color: styles.$text-primary;
-  background-color: styles.$background-base;
+  color: var.$text-primary;
+  background-color: var.$background-base;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

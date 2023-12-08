@@ -8,13 +8,17 @@ interface IIconProps {
 }
 
 const Icon = (props: IIconProps) => {
-  let classNames = "material-icons";
+  let classNames = "material-icons material-symbols-outlined";
 
   if (props.color) classNames += " " + classes[`icon--${props.color}`];
   if (props.className) classNames += " " + props.className;
   if (props.onClick) classNames += " pointer";
 
-  return <span className={classNames} onClick={props?.onClick}>{props.icon}</span>;
+  return (
+    <span className={classNames} onClick={props?.onClick}>
+      {props.icon}
+    </span>
+  );
 };
 
 export default Icon;
