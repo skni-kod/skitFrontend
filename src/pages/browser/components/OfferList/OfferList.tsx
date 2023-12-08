@@ -8,7 +8,7 @@ interface IOfferList extends TPaginator<TOffer> {
 }
 
 const OfferList = (props: IOfferList) => {
-  const offers: TOffer[] = props.Items;
+  const offers: TOffer[] = props.items;
 
   return (
     <div className={classes.offers}>
