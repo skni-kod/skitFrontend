@@ -1,32 +1,18 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef } from "react";
 import Icon from "@components/UI/atoms/Icon.tsx";
+import { useInputPassword } from "@components/UI/molecules/Input.hooks.tsx";
 import classes from "./Input.module.scss";
 
-interface IInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
+interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   iconBefore?: string;
   iconAfter?: string;
   label?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, IInputProps>(
-  (props: IInputProps, ref: React.ForwardedRef<HTMLInputElement>) => {
-    const [inputType, setInputType] = useState<string>(props.type);
-
+  (props: IInputProps, ref) => {
     const { iconBefore, iconAfter, label, ...inputProps } = props;
-
-    const handlePasswordEyeChange = () => {
-      if (props.type === inputType) setInputType("text");
-      else setInputType("password");
-    };
-
-    const isPasswordType = inputProps.type === "password";
-    const passwordEyeIconName = props.type === inputType
-      ? "visibility"
-      : "visibility_off";
-    const passwordEyeIcon = (
-      <Icon icon={passwordEyeIconName} onClick={handlePasswordEyeChange} />
-    );
+    const { inputType, passwordEyeIcon } = useInputPassword(inputProps.type);
 
     const onChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (e.target.value) {
@@ -39,25 +25,25 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
     };
 
     return (
-      <div className={classes["form-field"]}>
-        {iconBefore && <Icon icon={iconBefore} color={"primary"} />}
+      <label htmlFor={props?.id} className={classes["form-field"]}>
+        {iconBefore && <Icon icon={iconBefore} />}
         <div className={classes.field}>
           <input
             {...inputProps}
+            type={inputType}
             className={classes.input}
             ref={ref}
-            type={inputType}
             onChange={onChangeHandle}
           />
-          <label className={classes.label} htmlFor={props?.id}>
-            {label}
-          </label>
+          <div className={classes.label}>{label}</div>
         </div>
-        {isPasswordType && passwordEyeIcon}
+        {inputProps.type === "password" && passwordEyeIcon}
         {iconAfter && <Icon icon={iconAfter} />}
-      </div>
+      </label>
     );
   }
 );
+
+Input.displayName = "Input";
 
 export default Input;

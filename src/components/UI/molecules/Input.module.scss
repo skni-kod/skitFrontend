@@ -15,6 +15,11 @@ $border: 2px solid var.$text-primary;
     border-color: var.$text-secondary;
   }
 
+  &:has(.input:disabled) {
+    color: var.$text-primary-muted;
+    border-color: var.$text-primary-muted;
+  }
+
   .field {
     position: relative;
     width: 100%;
@@ -27,7 +32,7 @@ $border: 2px solid var.$text-primary;
       padding: 0 5px;
       position: absolute;
       background: var.$background-base;
-      transition: 0.2s all ease-out;
+      transition: 0.1s all ease-out;
     }
 
     .input {
