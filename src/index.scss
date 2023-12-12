@@ -32,12 +32,15 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 5px;
   width: 5px;
   background-color: var.$primary;
 
   &:hover {
-    background-color: var.$text-secondary-muted;
+    background-color: transparentize(var.$primary, 0.2);
+  }
+
+  &:active {
+    background-color: transparentize(var.$primary, 0.4);
   }
 }
 

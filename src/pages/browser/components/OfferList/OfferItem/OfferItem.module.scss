@@ -9,8 +9,8 @@ $increase-animation-duration: 0.2s;
   border: 2px solid transparent;
   height: 10rem;
   box-shadow:
-  0 0 20px transparentize(var.$primary, 1),
-  0 0 50px transparentize(var.$primary, 1);
+  0 0 10px transparentize(var.$primary, 1),
+  0 0 30px transparentize(var.$primary, 1);
   transition:
           $increase-animation-duration width ease-out,
           $increase-animation-duration border ease-out,
@@ -23,8 +23,8 @@ $increase-animation-duration: 0.2s;
     transform: translate(-1%, 0 );
     border: 2px dashed var.$text-primary-muted;
     box-shadow:
-            0 0 20px transparentize(var.$primary, 0.9),
-            0 0 50px transparentize(var.$primary, 0.8)
+            0 0 10px transparentize(var.$primary, 0.9),
+            0 0 30px transparentize(var.$primary, 0.8)
   ;
 
     h2 {

@@ -5,6 +5,7 @@ import { TOffer } from "@api/types/offer.ts";
 import { SALARY_EMPLOYMENT_ENUM } from "@api/enums/salary-employment.ts";
 import { WORK_LOCATION_ENUM } from "@api/enums/work-location.ts";
 
+//TODO: Its need refactor after added connection with API
 export function useBrowserPage() {
   const [params] = useSearchParams();
   const [offers, setOffers] = useState<TPaginator<TOffer> | null>(null);
@@ -16,15 +17,11 @@ export function useBrowserPage() {
     const timerId = setTimeout(() => {
       setOffers((prevOffers: TPaginator<TOffer>): TPaginator<TOffer> => {
         if (!prevOffers) return prevOffers;
-        const filteredOffers: TOffer[] = OFFERS_MOCK.filter(
-          (offer: TOffer) => {
-            if (!search) return true;
+        const filteredOffers: TOffer[] = OFFERS_MOCK.filter((offer: TOffer) => {
+          if (!search) return true;
 
-            return offer.title
-              .toLowerCase()
-              .includes(search.toLowerCase());
-          }
-        );
+          return offer.title.toLowerCase().includes(search.toLowerCase());
+        });
 
         console.log(filteredOffers);
         const newState: TPaginator<TOffer> = {
@@ -49,7 +46,7 @@ export function useBrowserPage() {
     setTimeout(async () => {
       for (const offer of OFFERS_MOCK) {
         await fetch(
-          `https://api.api-ninjas.com/v1/logo?name=${ offer.company.name }`,
+          `https://api.api-ninjas.com/v1/logo?name=${offer.company.name}`,
           {
             headers: {
               "X-Api-Key": "7gsrCpYuBGtKrY/oyANprQ==DTrSXXN97E5hbxul"
@@ -63,7 +60,7 @@ export function useBrowserPage() {
         pageIndex: 0,
         totalPages: Math.ceil(OFFERS_MOCK.length / 10),
         totalCount: OFFERS_MOCK.length,
-        items: OFFERS_MOCK,
+        items: OFFERS_MOCK
       };
 
       console.log(data);
@@ -75,9 +72,14 @@ export function useBrowserPage() {
     console.log(offer);
   };
 
+  const handleSortCategory = (category: string) => {
+    console.log(category);
+  };
+
   return {
     offers,
-    handleOffer
+    handleOffer,
+    handleSortCategory
   };
 }
 
