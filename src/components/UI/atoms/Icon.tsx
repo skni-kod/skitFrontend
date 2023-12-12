@@ -8,7 +8,7 @@ interface IIconProps {
 }
 
 const Icon = (props: IIconProps) => {
-  let classNames = "material-icons material-symbols-outlined";
+  let classNames = "material-icons " + classes['icon'];
 
   if (props.color) classNames += " " + classes[`icon--${props.color}`];
   if (props.className) classNames += " " + props.className;
