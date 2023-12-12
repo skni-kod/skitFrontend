@@ -1,0 +1,19 @@
+@use "src/styles/variables" as var;
+
+.description {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  .info {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .technologies {
+    font-size: 0.8rem;
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+}

@@ -1,7 +1,17 @@
 .offers {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 20% [content-start] 1fr [content-end] 20%;
   width: 100%;
   gap: 1rem;
   padding: 1rem;
+
+  & > * {
+    grid-column: content;
+  }
+
+  @media screen and (width < 1400px){
+    &{
+      grid-template-columns: 10% [content-start] 1fr [content-end] 10%;
+    }
+  }
 }

@@ -1,0 +1,17 @@
+@use 'src/styles/variables.scss' as var;
+
+.icon {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  color: inherit;
+
+  &-- {
+    &primary {
+      color: var.$text-primary;
+    }
+    &secondary {
+      color: var.$text-secondary;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use "src/styles/variables" as var;
+
+.sort-categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: 2px solid var.$primary;
+}

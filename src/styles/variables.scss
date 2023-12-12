@@ -1,7 +1,29 @@
-$background: #152735;
-$background1: #172a3a;
-$text: #bbd9e8;
-$accent: #3facb7;
-$accent1: #3b7dab;
+$primary: #2F8F96;
+$secondary: #0A1533;
+$secondary-highlight: #072135;
+$accent: #007B96;
 
-$muted: #566878;
+$border-radius-small: 5px;
+$border-radius-normal: 10px;
+$border-radius-large: 15px;
+
+$text-primary: #FFFFFF;
+$text-primary-muted: transparentize($text-primary, 0.7);
+$text-secondary: $primary;
+$text-secondary-muted: desaturate($text-secondary, 40%);
+$text-accent: $accent;
+
+
+$background-base: $secondary;
+$background-highlight: $secondary-highlight;
+
+//UI elements
+$ui-element-height: 40px;
+
+//Button
+$button-background-base: transparent;
+$button-border: $primary;
+$button-border-disabled: $text-secondary-muted;
+$button-text-color: $primary;
+$button-background-hover: transparentize($button-border, 0.9);
+$button-background-active: transparentize($button-border, 0.7);

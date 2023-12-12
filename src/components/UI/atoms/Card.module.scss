@@ -1,7 +1,7 @@
-@use "src/styles/variables" as styles;
+@use "src/styles/variables" as var;
 
 .card {
-  border-radius: 1rem;
+  border-radius: var.$border-radius-normal;
   padding: 1rem;
-  background-color: styles.$background1;
+  background-color: var.$background-highlight;
 }

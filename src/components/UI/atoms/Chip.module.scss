@@ -1,0 +1,39 @@
+@use "src/styles/variables" as var;
+
+
+.chip {
+  cursor: inherit;
+  border: 2px solid var.$text-secondary;
+  border-radius: var.$border-radius-small;
+  padding: 0.1rem 0.6rem;
+  transition: 0.2s all ease-in-out;
+
+  &--medium {
+    padding: 0.2rem 0.8rem;
+    font-size: medium;
+  }
+
+  &--small {
+    padding: 0.1rem 0.4rem;
+    font-size: small;
+  }
+
+  &--clickable {
+    cursor: pointer;
+    border-color: var.$text-primary;
+
+    &:hover {
+      background-color: transparentize(var.$primary, 0.9);
+    }
+
+    &:active {
+      color: var.$text-primary;
+      background-color: transparentize(var.$primary, 0.7);
+    }
+  }
+
+  &--selected {
+    color: var.$primary;
+    border-color: var.$primary;
+  }
+}
