@@ -1,5 +1,5 @@
-import { TPaginator } from "@api/types/paginator/paginator.ts";
-import { TOffer } from "@api/types/offer/offer.ts";
+import { TPaginator } from "@api/types/paginator.ts";
+import { TOffer } from "@api/types/offer.ts";
 import OfferItem from "@pages/browser/components/OfferList/OfferItem/OfferItem.tsx";
 import classes from "./OfferList.module.scss";
 
@@ -8,7 +8,7 @@ interface IOfferList extends TPaginator<TOffer> {
 }
 
 const OfferList = (props: IOfferList) => {
-  const offers: TOffer[] = props.Items;
+  const offers: TOffer[] = props.items;
 
   return (
     <div className={classes.offers}>
