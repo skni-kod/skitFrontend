@@ -109,15 +109,9 @@ const BrowserPage = () => {
   };
 
   return (
-    <div className={classes.whole}>
-      <div className={classes.container}>
-        {!offers && <div>Loading...</div>}
-        {offers && <OfferList {...offers} onOfferEmit={handleOffer} />}
-      </div>
-      <div>
-        {!offer && <div></div>}
-        {offer && <DetailsView {...offer} />}
-      </div>
+    <div>
+      {!offers && <div>Loading...</div>}
+      {offers && <OfferList {...offers} onOfferEmit={handleOffer} />}
     </div>
   );
 };

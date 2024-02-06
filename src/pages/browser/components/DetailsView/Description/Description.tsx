@@ -1,26 +1,22 @@
 import classes from './Description.module.scss';
-import Technologies from "@pages/browser/components/OfferList/OfferItem/Technologies/Technologies.tsx";
 
-const strLength = 123;
-const str:any = (n: number) => {
-  if (n === 0) return "";
-
-  return "Description " + str(n - 1);
-};
-
-interface IOfferDscr{
-  technologies: string[],
-}
-
-const Description = (props: IOfferDscr) => {
+const Description = () => {
   return (
-    <div className={classes.container}>
-      {props.technologies &&
-      <div className={classes.technologies}>
-        <Technologies technologies={props.technologies} />
-      </div>}
-      <div className={ classes.description }>
-        { str(strLength) }
+    <div className={ classes.description }>
+      <div className={classes.title}>Opis pracy</div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Aliquam dolor mauris, pulvinar sed molestie id,
+      tristique id nunc. Sed sodales nulla metus,
+      sit amet laoreet purus ultrices sit amet. Morbi ac faucibus enim,
+      non bibendum quam. Donec accumsan dui leo,
+      ac sollicitudin ipsum sodales vitae.
+      Curabitur vehicula accumsan tempor. Vestibulum erat arcu,
+      porta eu aliquet sed, suscipit eu purus. Nulla quam libero,
+      fermentum eu erat vestibulum, luctus lacinia quam.
+      <div>
+        <button className={classes.btn}>APLIKUJ
+          <span className="material-icons">description</span>
+        </button>
       </div>
     </div>
   );

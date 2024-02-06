@@ -1,0 +1,12 @@
+@use '../../../../../styles/variables.scss' as styles;
+
+.container{
+  border-bottom: solid thin styles.$accent;
+  padding: 1em;
+  .techs{
+    display: flex;
+  }
+  .title{
+    font-size: 1.5em;
+  }
+}

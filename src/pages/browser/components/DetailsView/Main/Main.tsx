@@ -1,50 +1,27 @@
 import classes from './Main.module.scss';
-import {BsBoxArrowUpRight, BsFillLayersFill, BsFire} from "react-icons/bs";
-import {BiCommentDetail, BiSolidMapPin} from "react-icons/bi";
-import {MdHomeWork} from "react-icons/md";
-import {TSalaryRange} from "@api/types/offer/offer.ts";
 
 interface IOfferMain {
-  salaryRange: TSalaryRange,
-  workLocation: string,
+  title: string,
 }
 
 const Item2 = (props: IOfferMain) => {
-  const {workLocation, salaryRange} = props;
-
-  const salary = (salaryRange ? salaryRange.from + (String)(salaryRange.to ? ` - ${salaryRange.to}` : "") + "zł" : "");
+  const {title} = props;
 
   return (
-    <div className={ classes.item3 }>
-      <div className={ classes.top }>
-        <h4>Parametry oferty</h4>
-        <button className={ classes.newCard }><BsBoxArrowUpRight /></button>
-        <button className={ classes.question }><BiCommentDetail /></button>
+    <>
+      <div className={ classes.main }>
+        <div className={classes.title}>{title}</div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Aliquam dolor mauris, pulvinar sed molestie id,
+        tristique id nunc. Sed sodales nulla metus,
+        sit amet laoreet purus ultrices sit amet. Morbi ac faucibus enim,
+        non bibendum quam. Donec accumsan dui leo,
+        ac sollicitudin ipsum sodales vitae.
+        Curabitur vehicula accumsan tempor. Vestibulum erat arcu,
+        porta eu aliquet sed, suscipit eu purus. Nulla quam libero,
+        fermentum eu erat vestibulum, luctus lacinia quam.
       </div>
-      <div className={ classes.middle }>
-        <p>{salary}</p>
-        <p>kontrakt B2B (pełny etat)</p>
-      </div>
-      <div className={ classes.lower }>
-        <p className={ classes.pgh }>
-          <MdHomeWork/>
-          <span>hate &#x2022; menel</span>
-        </p>
-        <p className={ classes.pgh }>
-          <BsFillLayersFill/>
-          <span>hate &#x2022; menel</span>
-        </p>
-        <p className={ classes.pgh }>
-          <BsFire/>
-          <span>praca jest jeszcze ważna 0 dni</span>
-        </p>
-        <p className={ classes.pgh }>
-          <BiSolidMapPin/>
-          <span>{workLocation}</span>
-        </p>
-      </div>
-
-    </div>
+    </>
   );
 };
 
