@@ -1,0 +1,59 @@
+@use 'src/styles/variables.scss' as var;
+
+$border: 2px solid var.$text-primary;
+
+.form-field {
+  display: flex;
+  height: var.$ui-element-height;
+  border: $border;
+  border-radius: 5px;
+  padding: 0 10px;
+  gap: 10px;
+  align-items: center;
+
+  &:hover {
+    border-color: var.$text-secondary;
+  }
+
+  &:has(.input:disabled) {
+    color: var.$text-primary-muted;
+    border-color: var.$text-primary-muted;
+  }
+
+  .field {
+    position: relative;
+    width: 100%;
+
+    .label {
+      order: -1;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      padding: 0 5px;
+      position: absolute;
+      background: var.$background-base;
+      transition: 0.1s all ease-out;
+    }
+
+    .input {
+      height: 100%;
+      font-size: large;
+      border: none;
+      outline: none;
+      background: transparent;
+    }
+
+    .input:focus + .label,
+    .input--focused + .label  {
+      transform: translate(-8%, -80%);
+    }
+  }
+
+  //.icon-before {
+  //    border-right: $border;
+  //}
+  //
+  //.icon-after {
+  //    border-left: $border;
+  //}
+}

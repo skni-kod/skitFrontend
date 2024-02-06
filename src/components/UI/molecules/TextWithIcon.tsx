@@ -16,8 +16,7 @@ const TextWithIcon = (props: ITextWithIcon) => {
   return (
     <div className={className}>
       {props.iconBefore && <Icon icon={props.iconBefore}/>}
-      {props.text}
-      {props.children}
+      {props.text ?? props.children}
       {props.iconAfter && <Icon icon={props.iconAfter}/>}
     </div>
   );

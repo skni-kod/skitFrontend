@@ -1,6 +1,6 @@
-.whole{
-  display: inline-flex;
-  .container{
-    width: 50vw;
-  }
+.content {
+  width: 100dvw;
+  height: 100%;
+  overflow-y: scroll;
+  -ms-overflow-y: scroll;
 }

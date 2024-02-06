@@ -1,0 +1,19 @@
+@use 'src/styles/variables.scss' as var;
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px solid var.$primary;
+
+  .left-side, .right-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .logo {
+      height: 80%;
+    }
+  }
+}

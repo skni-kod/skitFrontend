@@ -1,0 +1,38 @@
+@use 'src/styles/variables.scss' as var;
+
+.button {
+  height: var.$ui-element-height;
+  display: flex;
+  align-items: center;
+  background-color: var.$button-background-base;
+  border: 2px solid var.$primary;
+  color: var.$text-secondary;
+  padding: 0 20px;
+  border-radius: var.$border-radius-small;
+  font-size: large;
+  transition: background-color 0.2s ease-out;
+
+  &:hover {
+    background-color: var.$button-background-hover;
+  }
+
+  &:active {
+    background-color: var.$button-background-active;
+  }
+
+  &:disabled {
+    background-color: var.$button-border-disabled;
+  }
+
+  .content {
+    gap: 5px;
+  }
+
+  &--icon-before {
+    padding-left: 10px;
+  }
+
+  &--icon-after {
+    padding-right: 10px;
+  }
+}
