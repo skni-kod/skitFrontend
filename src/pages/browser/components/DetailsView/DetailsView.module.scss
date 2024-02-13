@@ -1,15 +1,15 @@
-@use '../../../../styles/variables' as styles;
+@use "src/styles/variables" as var;
 ::-webkit-scrollbar {
   width: 0;
 }
 .details{
-  border: solid thin styles.$accent;
-  background-color: styles.$background1;
-  width: 50vw;
+  border: solid thin var.$accent;
+  background-color: var.$background-base;
+  min-width: 50em;
   min-height: 50vh;
   margin-top: 1rem;
   overflow-y: scroll;
-  .noPointerEvents{
+  .no-pointer-events{
     pointer-events: none;
   }
 }

@@ -1,0 +1,22 @@
+@use "src/styles/variables" as var;
+
+.btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: var.$accent;
+  border: none;
+  border-radius: 0.5rem;
+  margin: 2rem auto;
+  width: 12rem;
+  height: 4rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  transition: all .1s ease-in-out;
+  &:hover{
+    box-shadow: rgba(255, 255, 255, 0.22) 0 0 15px;
+    transform: translate3d(0px, -3px, 0px);
+  }
+}

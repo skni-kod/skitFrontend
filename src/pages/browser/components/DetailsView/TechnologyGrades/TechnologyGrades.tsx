@@ -1,14 +1,15 @@
 import classes from "./TechnologyGrades.module.scss";
 import Technology from "./Technology/Technology.tsx"
+import {TTechnology} from "@api/types/technology.ts";
 
-const TechnologyGrades = ({techs}: { techs: string[] }) => {
+const TechnologyGrades = ({techs}: { techs: TTechnology[] }) => {
 
   return (
     <div className={classes.container}>
       <p className={classes.title}>Technologie</p>
       <div className={classes.techs}>
-        {techs.map((tech, index) => (
-          <Technology tech={tech} key={index}/>
+        {techs.map((tech) => (
+          <Technology tech={tech.name}/>
         ))}
       </div>
     </div>

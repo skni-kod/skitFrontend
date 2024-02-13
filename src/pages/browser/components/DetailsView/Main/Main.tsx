@@ -20,6 +20,9 @@ const Item2 = (props: IOfferMain) => {
         Curabitur vehicula accumsan tempor. Vestibulum erat arcu,
         porta eu aliquet sed, suscipit eu purus. Nulla quam libero,
         fermentum eu erat vestibulum, luctus lacinia quam.
+        <div>
+          <button className={classes.btn}>Profil firmy</button>
+        </div>
       </div>
     </>
   );

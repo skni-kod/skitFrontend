@@ -1,4 +1,5 @@
 import classes from './Description.module.scss';
+import Btn from "@components/UI/atoms/Btn.tsx";
 
 const Description = () => {
   return (
@@ -13,11 +14,7 @@ const Description = () => {
       Curabitur vehicula accumsan tempor. Vestibulum erat arcu,
       porta eu aliquet sed, suscipit eu purus. Nulla quam libero,
       fermentum eu erat vestibulum, luctus lacinia quam.
-      <div>
-        <button className={classes.btn}>APLIKUJ
-          <span className="material-icons">description</span>
-        </button>
-      </div>
+      <Btn icon={"contract_edit"} text={"APLIKUJ"}/>
     </div>
   );
 };
