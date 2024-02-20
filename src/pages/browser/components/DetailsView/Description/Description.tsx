@@ -1,5 +1,5 @@
 import classes from './Description.module.scss';
-import Btn from "@components/UI/atoms/Btn.tsx";
+import Button from "@components/UI/molecules/Button.tsx";
 
 const Description = () => {
   return (
@@ -14,7 +14,7 @@ const Description = () => {
       Curabitur vehicula accumsan tempor. Vestibulum erat arcu,
       porta eu aliquet sed, suscipit eu purus. Nulla quam libero,
       fermentum eu erat vestibulum, luctus lacinia quam.
-      <Btn icon={"contract_edit"} text={"APLIKUJ"}/>
+      <Button text={"APLIKUJ"} iconAfter={"contract_edit"} className={classes.button}/>
     </div>
   );
 };

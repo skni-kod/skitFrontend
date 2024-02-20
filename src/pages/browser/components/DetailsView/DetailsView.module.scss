@@ -1,9 +1,7 @@
 @use "src/styles/variables" as var;
-::-webkit-scrollbar {
-  width: 0;
-}
+
 .details{
-  border: solid thin var.$accent;
+  border: solid 2px var.$accent;
   background-color: var.$background-base;
   min-width: 50em;
   min-height: 50vh;

@@ -5,12 +5,10 @@
   min-height: 10vh;
   border-bottom: solid var.$accent 1px;
 
-  .btn{
-    border: 1px solid var.$accent;
-    border-radius: .4rem;
-    background: #072135;
-    padding: .4rem 1.6rem;
+  .button{
     margin: 1rem 0 0;
+    height: 2rem;
+    font-size: 1rem;
   }
 
   .title {

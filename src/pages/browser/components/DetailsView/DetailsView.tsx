@@ -5,13 +5,12 @@ import TechnologyGrades from "@pages/browser/components/DetailsView/TechnologyGr
 import OfferItem from "@pages/browser/components/OfferList/OfferItem/OfferItem.tsx";
 import {TOffer} from "@api/types/offer.ts";
 const DetailsView = (props: TOffer) => {
-  const {title, id, technologies} = props;
+  const {title, technologies} = props;
 
   return (
     <div className={ classes.details }>
       <div className={classes["no-pointer-events"]}>
         <OfferItem
-          key={id}
           offer={props}
         />
       </div>

@@ -7,9 +7,19 @@
     margin: 1rem 0;
     font-size: 1.5rem;
   }
-}
-.technologies {
-  margin: 1rem 1rem 0 auto;
-  display: flex;
-  justify-content: flex-end;
+  .button{
+    justify-content: center;
+    margin: 1rem auto 0;
+    width: 12rem;
+    height: 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black;
+    background-color: var.$accent;
+    transition: all .1s ease-in-out;
+    &:hover{
+      box-shadow: rgba(255, 255, 255, 0.22) 0 0 15px;
+      transform: translate3d(0px, -3px, 0px);
+    }
+  }
 }
