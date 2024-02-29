@@ -1,0 +1,18 @@
+@use "src/styles/variables" as var;
+.main {
+  display: block;
+  padding: 1em;
+  min-height: 10vh;
+  border-bottom: solid var.$accent 1px;
+
+  .button{
+    margin: 1rem 0 0;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+  }
+}

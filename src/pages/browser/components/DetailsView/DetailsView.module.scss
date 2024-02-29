@@ -1,0 +1,13 @@
+@use "src/styles/variables" as var;
+
+.details{
+  border: solid 2px var.$accent;
+  background-color: var.$background-base;
+  min-width: 50em;
+  min-height: 50vh;
+  margin-top: 1rem;
+  overflow-y: scroll;
+  .no-pointer-events{
+    pointer-events: none;
+  }
+}

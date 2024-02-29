@@ -9,6 +9,7 @@ import { WORK_LOCATION_ENUM } from "@api/enums/work-location.ts";
 export function useBrowserPage() {
   const [params] = useSearchParams();
   const [offers, setOffers] = useState<TPaginator<TOffer> | null>(null);
+  const [offer, setOffer] = useState<TOffer | null>(null);
 
   const search = params.get("search");
 
@@ -69,6 +70,7 @@ export function useBrowserPage() {
   }, []);
 
   const handleOffer = (offer: TOffer) => {
+    setOffer(offer);
     console.log(offer);
   };
 
@@ -77,6 +79,7 @@ export function useBrowserPage() {
   };
 
   return {
+    offer,
     offers,
     handleOffer,
     handleSortCategory

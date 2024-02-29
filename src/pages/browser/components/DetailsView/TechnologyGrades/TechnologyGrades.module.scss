@@ -1,0 +1,12 @@
+@use "src/styles/variables" as var;
+
+.container{
+  border-bottom: solid thin var.$accent;
+  padding: 1em;
+  .techs{
+    display: flex;
+  }
+  .title{
+    font-size: 1.5em;
+  }
+}
