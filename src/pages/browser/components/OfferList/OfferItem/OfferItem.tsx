@@ -1,4 +1,4 @@
-import { TOffer } from "@api/types/offer.ts";
+import { TOffer } from "@shared/types/domain/offers/offer.ts";
 import Card from "@components/UI/atoms/Card.tsx";
 import TitleAndSalarySection from "@pages/browser/components/OfferList/OfferItem/MainInfo/TitleAndSalarySection.tsx";
 import DescriptionAndTechnologiesSection from "@pages/browser/components/OfferList/OfferItem/Technologies/DescriptionAndTechnologiesSection.tsx";

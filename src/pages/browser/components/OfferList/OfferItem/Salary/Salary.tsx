@@ -1,7 +1,7 @@
-import { TSalary } from "@api/types/salary.ts";
+import { TSalary } from "@shared/types/domain/salaries/salary.ts";
 import TextWithIcon from "@components/UI/molecules/TextWithIcon.tsx";
 import classes from "./Salary.module.scss";
-import { SALARY_EMPLOYMENT_MAP } from "@api/maps/salary-employment.ts";
+import { SALARY_EMPLOYMENT_MAP } from "@shared/maps/salary-employment.map.ts";
 
 interface ISalaryProps {
   salaryRange: TSalary;

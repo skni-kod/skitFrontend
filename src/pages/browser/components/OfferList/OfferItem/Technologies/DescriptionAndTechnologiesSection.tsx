@@ -1,9 +1,9 @@
 import TextWithIcon from "@components/UI/molecules/TextWithIcon.tsx";
 import ChipWithIcon from "@components/UI/molecules/ChipWithIcon.tsx";
 
-import { WORK_LOCATION_ENUM } from "@api/enums/work-location.ts";
-import { TTechnology } from "@api/types/technology.ts";
-import { WORK_LOCATION_MAP } from "@api/maps/work-location.ts";
+import { WORK_LOCATION_ENUM } from "@shared/enums/work-location.enum.ts";
+import { TTechnology } from "@shared/types/domain/technologies/technology.ts";
+import { WORK_LOCATION_MAP } from "@shared/maps/work-location.map.ts";
 
 import classes from "./DescriptionAndTechnologiesSection.module.scss";
 

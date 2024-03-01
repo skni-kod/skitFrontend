@@ -1,4 +1,4 @@
-import { SALARY_EMPLOYMENT_ENUM } from "@api/enums/salary-employment.ts";
+import { SALARY_EMPLOYMENT_ENUM } from "@shared/enums/salary-employment.enum.ts";
 
 export type TSalary = {
   id?: string

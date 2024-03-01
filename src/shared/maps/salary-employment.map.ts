@@ -1,4 +1,4 @@
-import { SALARY_EMPLOYMENT_ENUM } from "@api/enums/salary-employment.ts";
+import { SALARY_EMPLOYMENT_ENUM } from "@shared/enums/salary-employment.enum.ts";
 
 export const SALARY_EMPLOYMENT_MAP: Map<SALARY_EMPLOYMENT_ENUM, string> = new Map<SALARY_EMPLOYMENT_ENUM, string>([
   [SALARY_EMPLOYMENT_ENUM.Permanent, "UoP"],

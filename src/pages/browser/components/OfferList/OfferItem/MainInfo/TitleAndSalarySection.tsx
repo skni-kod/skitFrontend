@@ -1,6 +1,6 @@
 import classes from "./TitleAndSalarySection.module.scss";
 import Salary from "@pages/browser/components/OfferList/OfferItem/Salary/Salary.tsx";
-import { TSalary } from "@api/types/salary.ts";
+import { TSalary } from "@shared/types/domain/salaries/salary.ts";
 
 interface ITitleAndSalarySection {
   title: string;
