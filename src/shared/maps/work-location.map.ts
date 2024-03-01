@@ -1,4 +1,4 @@
-import { WORK_LOCATION_ENUM } from "@api/enums/work-location.ts";
+import { WORK_LOCATION_ENUM } from "@shared/enums/work-location.enum.ts";
 
 export const WORK_LOCATION_MAP = new Map<WORK_LOCATION_ENUM, string>([
   [WORK_LOCATION_ENUM.Office, "stacjonarna"],

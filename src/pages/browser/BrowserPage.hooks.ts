@@ -1,9 +1,9 @@
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { TPaginator } from "@api/types/paginator.ts";
-import { TOffer } from "@api/types/offer.ts";
-import { SALARY_EMPLOYMENT_ENUM } from "@api/enums/salary-employment.ts";
-import { WORK_LOCATION_ENUM } from "@api/enums/work-location.ts";
+import { TPaginator } from "@shared/types/pagination/paginator.ts";
+import { TOffer } from "@shared/types/domain/offers/offer.ts";
+import { SALARY_EMPLOYMENT_ENUM } from "@shared/enums/salary-employment.enum.ts";
+import { WORK_LOCATION_ENUM } from "@shared/enums/work-location.enum.ts";
 
 //TODO: Its need refactor after added connection with API
 export function useBrowserPage() {

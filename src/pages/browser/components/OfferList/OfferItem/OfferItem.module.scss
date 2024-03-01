@@ -21,7 +21,7 @@ $increase-animation-duration: 0.2s;
     cursor: pointer;
     width: 102%;
     transform: translate(-1%, 0 );
-    border: 2px dashed var.$text-primary-muted;
+    border: 2px solid var.$primary;
     box-shadow:
             0 0 10px transparentize(var.$primary, 0.9),
             0 0 30px transparentize(var.$primary, 0.8)

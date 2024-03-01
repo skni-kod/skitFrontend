@@ -1,5 +1,5 @@
-import { TPaginator } from "@api/types/paginator.ts";
-import { TOffer } from "@api/types/offer.ts";
+import { TPaginator } from "@shared/types/pagination/paginator.ts";
+import { TOffer } from "@shared/types/domain/offers/offer.ts";
 import OfferItem from "@pages/browser/components/OfferList/OfferItem/OfferItem.tsx";
 import classes from "./OfferList.module.scss";
 
