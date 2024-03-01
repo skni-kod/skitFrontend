@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "npx vite",
+    "start": "npx vite --port 5137",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint sk-it --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -14,7 +14,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.17.0",
-    "scss": "^0.2.4"
+    "scss": "^0.2.4",
+    "axios": "^1.6.7"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
