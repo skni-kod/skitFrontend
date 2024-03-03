@@ -1,13 +1,18 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { routes } from "./shared/routes/routes.tsx";
+import { Outlet } from "react-router-dom";
 import "./App.scss";
+import Navigation from "@containers/Navigation/Navigation.tsx";
+import { Suspense } from "react";
 
-const router = createBrowserRouter(routes);
 
 const App = () => {
 
   return (
-    <RouterProvider router={router}/>
+    <>
+      <Navigation />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
+    </>
   );
 };
 
