@@ -5,8 +5,8 @@ import { getPublicOffer, getPublicOffers } from "@api/offers";
 
 export function useBrowserPage() {
   //TODO: make usePagination hook
-  const [offers, setOffers] = useState<TPaginator<TOffer> | null>(null);
-  const [offer, setOffer] = useState<TOffer | null>(null);
+  const [offers, setOffers] = useState<TPaginator<TOffer>>(null);
+  const [offer, setOffer] = useState<TOffer>(null);
 
   useEffect(() => {
     getPublicOffers({

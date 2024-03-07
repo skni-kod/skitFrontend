@@ -11,6 +11,9 @@ const BASE_PUBLIC_URL = "/public/offers";
 
 type TOffersParams = {
   search?: string,
+} & TPaginationParams;
+
+type TPublicOffersParams = {
   seniorities?: SENIORITY_ENUM,
   workLocations?: WORK_LOCATION_ENUM,
   cities?: string[],
@@ -18,7 +21,7 @@ type TOffersParams = {
   salaryTo?: number,
   employmentType?: EMPLOYMENT_TYPE_ENUM,
   technologyIds?: string[],
-} & TPaginationParams;
+} & TOffersParams;
 
 type TOffersResponse = {
   offers: TPaginator<TOffer>
@@ -28,7 +31,7 @@ type TOfferResponse = {
   offer: TOffer
 }
 
-export function getPublicOffers(params: TOffersParams): Promise<TPaginator<TOffer>> {
+export function getPublicOffers(params: TPublicOffersParams): Promise<TPaginator<TOffer>> {
   return httpClient.get<TOffersResponse>(BASE_PUBLIC_URL, { params })
     .then((res) => res.offers);
 }
@@ -36,4 +39,9 @@ export function getPublicOffers(params: TOffersParams): Promise<TPaginator<TOffe
 export function getPublicOffer(id: string): Promise<TOffer> {
   return httpClient.get<TOfferResponse>(`${BASE_PUBLIC_URL}/${id}`)
     .then((res) => res.offer);
+}
+
+export function getOffers(params: TOffersParams): Promise<TPaginator<TOffer>> {
+  return httpClient.get<TOffersResponse>(BASE_URL, { params })
+    .then((res) => res.offers);
 }
