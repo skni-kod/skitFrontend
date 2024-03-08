@@ -1,23 +1,27 @@
 import classes from "./Icon.module.scss";
+import { icons } from "lucide-react";
 
-interface IIconProps {
+export type IconName = keyof typeof icons;
+
+type IconProps = {
   className?: string;
-  icon: string;
+  iconName: IconName;
   color?: "primary" | "secondary";
   onClick?: () => void;
 }
 
-const Icon = (props: IIconProps) => {
-  let classNames = "material-symbols-outlined " + classes['icon'];
+const Icon = (props: IconProps) => {
+  const {iconName, color, className, onClick} = props;
+  const LucideIcon = icons[iconName];
 
-  if (props.color) classNames += " " + classes[`icon--${props.color}`];
-  if (props.className) classNames += " " + props.className;
-  if (props.onClick) classNames += " pointer";
+  let classNames = classes['icon'];
+
+  if (color) classNames += " " + classes[`icon--${color}`];
+  if (className) classNames += " " + className;
+  if (onClick) classNames += " pointer";
 
   return (
-    <span className={classNames} onClick={props?.onClick}>
-      {props.icon}
-    </span>
+    <LucideIcon size={20} className={classNames} onClick={onClick} />
   );
 };
 

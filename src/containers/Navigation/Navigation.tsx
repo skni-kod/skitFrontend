@@ -1,16 +1,16 @@
-import logo from "assets/logo.svg";
-import classes from "./Navigation.module.scss";
+import React from "react";
+import { NavLink, useSearchParams } from "react-router-dom";
 import Input from "@components/UI/molecules/Input.tsx";
 import Button from "@components/UI/molecules/Button.tsx";
-import { NavLink, useSearchParams } from "react-router-dom";
-import React from "react";
+import logo from "@assets/logo.svg";
+import classes from "./Navigation.module.scss";
 
 const Navigation = () => {
-  const [params, setParams] = useSearchParams({search: ""});
-  const search = params.get("search");
+  const [searchParams, setSearchParams] = useSearchParams({search: ""});
+  const search = searchParams.get("search");
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setParams({ search: e.target.value });
+    setSearchParams({ search: e.target.value });
   };
 
   return (
@@ -20,7 +20,7 @@ const Navigation = () => {
           <img className={classes.logo} src={logo} alt="logo" />
         </NavLink>
         <Input
-          iconBefore={"search"}
+          iconBefore={"Search"}
           label={"Szukaj pracy w IT"}
           type={"text"}
           name={"search"}
@@ -29,7 +29,7 @@ const Navigation = () => {
         />
       </div>
       <div className={classes["right-side"]}>
-        <Button iconBefore={"add"}>Dodaj ogłoszenie</Button>
+        <Button iconBefore={"Plus"}>Dodaj ogłoszenie</Button>
       </div>
     </nav>
   );

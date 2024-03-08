@@ -15,7 +15,7 @@ const Salary = (props: ISalaryProps) => {
   const employmentType = SALARY_EMPLOYMENT_MAP.get(props.salaryRange.employmentType);
 
   return (
-    <TextWithIcon iconBefore="attach_money">
+    <TextWithIcon iconBefore={"CircleDollarSign"}>
       <span>
         <span className={classes.salary}>{salary}</span> zł ({employmentType})
       </span>

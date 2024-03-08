@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
-import Icon from "@components/UI/atoms/Icon.tsx";
+import Icon, { IconName } from "@components/UI/atoms/Icon.tsx";
 import classes from "./TextWithIcon.module.scss";
 
 interface ITextWithIcon {
   className?: string;
   children?: ReactNode;
-  iconBefore?: string;
-  iconAfter?: string;
+  iconBefore?: IconName;
+  iconAfter?: IconName;
   text?: string;
 }
 
@@ -15,9 +15,9 @@ const TextWithIcon = (props: ITextWithIcon) => {
 
   return (
     <div className={className}>
-      {props.iconBefore && <Icon icon={props.iconBefore}/>}
+      {props.iconBefore && <Icon iconName={props.iconBefore}/>}
       {props.text ?? props.children}
-      {props.iconAfter && <Icon icon={props.iconAfter}/>}
+      {props.iconAfter && <Icon iconName={props.iconAfter}/>}
     </div>
   );
 };
