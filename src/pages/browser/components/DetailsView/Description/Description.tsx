@@ -14,7 +14,7 @@ const Description = () => {
       Curabitur vehicula accumsan tempor. Vestibulum erat arcu,
       porta eu aliquet sed, suscipit eu purus. Nulla quam libero,
       fermentum eu erat vestibulum, luctus lacinia quam.
-      <Button text={"APLIKUJ"} iconAfter={"contract_edit"} className={classes.button}/>
+      <Button text={"APLIKUJ"} iconAfter={"FolderSymlink"} className={classes.button}/>
     </div>
   );
 };

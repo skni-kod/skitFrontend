@@ -1,5 +1,5 @@
 import classes from "./Icon.module.scss";
-import { icons } from "lucide-react";
+import { icons, LucideProps } from "lucide-react";
 
 export type IconName = keyof typeof icons;
 
@@ -7,17 +7,17 @@ type IconProps = {
   iconName: IconName;
   className?: string;
   size?: number;
-  color?: "primary" | "secondary";
+  fontColor?: "primary" | "secondary";
   onClick?: () => void;
-}
+} & LucideProps;
 
 const Icon = (props: IconProps) => {
-  const {iconName, color, className, ...iconProps} = props;
+  const {iconName, fontColor, className, ...iconProps} = props;
   const LucideIcon = icons[iconName];
 
   let classNames = classes['icon'];
 
-  if (color) classNames += " " + classes[`icon--${color}`];
+  if (fontColor) classNames += " " + classes[`icon--${fontColor}`];
   if (className) classNames += " " + className;
   if (iconProps.onClick) classNames += " pointer";
 
