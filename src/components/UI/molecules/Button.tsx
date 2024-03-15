@@ -1,17 +1,19 @@
+import { ReactNode } from "react";
+import { IconName } from "@components/UI/atoms/Icon.tsx";
 import TextWithIcon from "@components/UI/molecules/TextWithIcon.tsx";
 import classes from "./Button.module.scss";
 
 interface IButtonProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
   className?: string;
-  iconBefore?: string;
-  iconAfter?: string;
+  iconBefore?: IconName;
+  iconAfter?: IconName;
   text?: string;
-  onClick?: () => void
+  onClick?: () => void;
 }
 
 const Button = (props: IButtonProps) => {
-  const classNames = `${classes.button} ${props.iconBefore ? classes['button--icon-before'] : ""} ${props.iconAfter ? classes['button--icon-after'] : ""} ${props.className ?? ""}`;
+  const classNames = `${classes.button} ${props.iconBefore ? classes["button--icon-before"] : ""} ${props.iconAfter ? classes["button--icon-after"] : ""} ${props.className ?? ""}`;
 
   return (
     <button className={classNames} onClick={props?.onClick}>

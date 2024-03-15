@@ -6,6 +6,7 @@ import { WORK_LOCATION_MAP } from "@shared/maps/work-location.map.ts";
 
 import classes from "./DescriptionAndTechnologiesSection.module.scss";
 import { TWorkLocation } from "@shared/types/domain/work-location/work-location.ts";
+import Icon from "@components/UI/atoms/Icon.tsx";
 
 interface ITechnologiesProps {
   technologies: TTechnology[];
@@ -31,12 +32,12 @@ const DescriptionAndTechnologiesSection = (props: ITechnologiesProps) => {
   return (
     <div className={classes.description}>
       <div className={classes.info}>
-        <TextWithIcon iconBefore="apartment" text={props.companyName} />
+        <TextWithIcon iconBefore="Building2" text={props.companyName} />
         {citiesString && (
-          <TextWithIcon iconBefore="place" text={citiesString} />
+          <TextWithIcon iconBefore="MapPin" text={citiesString} />
         )}
         {workLocationsString && (
-          <TextWithIcon iconBefore="work" text={workLocationsString} />
+          <TextWithIcon iconBefore="Banana" text={workLocationsString} />
         )}
       </div>
 
@@ -47,10 +48,10 @@ const DescriptionAndTechnologiesSection = (props: ITechnologiesProps) => {
               <ChipWithIcon
                 key={technology.name}
                 text={technology.name}
-                icon={technology.thumUrl}
+                icon={"Bolt"}
               />
             ))}
-            <span className="material-icons">code</span>
+            <Icon iconName="Code" />
           </>
         )}
       </div>

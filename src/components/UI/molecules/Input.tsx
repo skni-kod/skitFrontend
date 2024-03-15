@@ -1,16 +1,16 @@
 import React, { forwardRef } from "react";
-import Icon from "@components/UI/atoms/Icon.tsx";
+import Icon, { IconName } from "@components/UI/atoms/Icon.tsx";
 import { useInputPassword } from "@components/UI/molecules/Input.hooks.tsx";
 import classes from "./Input.module.scss";
 
-interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  iconBefore?: string;
-  iconAfter?: string;
+type InputProps  = {
+  iconBefore?: IconName;
+  iconAfter?: IconName;
   label?: string;
-}
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-const Input = forwardRef<HTMLInputElement, IInputProps>(
-  (props: IInputProps, ref) => {
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  (props: InputProps, ref) => {
     const { iconBefore, iconAfter, label, ...inputProps } = props;
     const { inputType, passwordEyeIcon } = useInputPassword(inputProps.type);
 
@@ -21,24 +21,24 @@ const Input = forwardRef<HTMLInputElement, IInputProps>(
         e.target.classList.remove(classes["input--focused"]);
       }
 
-      if (props.onChange) props.onChange(e);
+      if (inputProps.onChange) inputProps.onChange(e);
     };
 
     return (
-      <label htmlFor={props?.id} className={classes["form-field"]}>
-        {iconBefore && <Icon icon={iconBefore} />}
+      <label htmlFor={inputProps?.id} className={classes["form-field"]}>
+        {iconBefore && <Icon iconName={iconBefore} />}
         <div className={classes.field}>
           <input
             {...inputProps}
             type={inputType}
-            className={classes.input}
+            className={classes.input + " " + (inputProps.value ? classes["input--focused"] : "")}
             ref={ref}
             onChange={onChangeHandle}
           />
           <div className={classes.label}>{label}</div>
         </div>
         {inputProps.type === "password" && passwordEyeIcon}
-        {iconAfter && <Icon icon={iconAfter} />}
+        {iconAfter && <Icon iconName={iconAfter} />}
       </label>
     );
   }
